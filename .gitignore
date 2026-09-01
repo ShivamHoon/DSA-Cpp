@@ -1,0 +1,10 @@
+# C++ executables
+*.exe
+*.out
+
+# Build folders
+build/
+bin/
+
+# VS Code
+.vscode/
