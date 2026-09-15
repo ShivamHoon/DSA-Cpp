@@ -30,6 +30,14 @@ void print(Node* head){
     }
     cout<<"NULL"<<endl;
 }
+void insertAtHead(Node* &head, int data){
+    Node* newNode = new Node(data);
+    newNode->next = head;
+    if(head != NULL){
+        head->prev = newNode;
+    }
+    head = newNode;
+}
 
 int main(){
     vector<int> arr = {1,2,3,4,5};
@@ -41,6 +49,7 @@ int main(){
         newNode->prev = current;
         current = newNode;
     }
+    insertAtHead(head, 0); // Insert at head for testing
     print(head);
     return 0;
 }
