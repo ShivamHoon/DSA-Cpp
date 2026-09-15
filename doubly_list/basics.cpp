@@ -38,6 +38,18 @@ void insertAtHead(Node* &head, int data){
     }
     head = newNode;
 }
+void deleteNodeAtHead(Node* &head){
+    if(head == NULL){
+        return;
+    }
+    Node* delNode = head;
+    head = head->next;
+    if(head != NULL){
+        head->prev = NULL;
+    }
+    delete delNode;
+}
+
 
 int main(){
     vector<int> arr = {1,2,3,4,5};
@@ -50,6 +62,7 @@ int main(){
         current = newNode;
     }
     insertAtHead(head, 0); // Insert at head for testing
+    deleteNodeAtHead(head); // Delete head for testing
     print(head);
     return 0;
 }
